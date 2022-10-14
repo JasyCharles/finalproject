@@ -1,17 +1,13 @@
-pipeline {
-    agent { docker { image: 'maven:3.3.3' } }
-    stages {
+node {
        stage('SCM') {
          checkout scm
        }
 
       stage ('Build')  {
           git 'https://github.com/JasyCharles/finalproject.git'
-          
-          steps {
+       
              sh 'mvn clean install'
              sh 'mvn clean compile test'
-          }
        }
     
     
@@ -41,5 +37,4 @@ pipeline {
             sh "$scannerHome}/bin/sonar-scanner"
         }
      }
-  }
 }
