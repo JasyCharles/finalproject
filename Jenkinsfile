@@ -3,7 +3,7 @@ node {
          checkout scm
        }
 
-      stage ('Build')  {
+      stage (' Build')  {
           git 'https://github.com/JasyCharles/finalproject.git'
              withMaven(maven: 'maven') {
                 sh 'mvn clean install'
