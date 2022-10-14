@@ -5,7 +5,7 @@ node {
 
       stage ('Build')  {
           git 'https://github.com/JasyCharles/finalproject.git'
-             withMaven() {
+             withMaven(maven: 'mvn') {
                 sh 'mvn clean install'
                 sh 'mvn clean compile test'
              }
