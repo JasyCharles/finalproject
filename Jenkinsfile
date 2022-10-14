@@ -8,7 +8,7 @@ node {
 
         def mvnHome = tool 'mvn'
         withMaven()  {
-                sh "$(mvnHome)/bin/mvn clean install"
+                sh "${mvnHome}/bin/mvn clean install"
                 sh "${mvnHome}/bin/mvn clean compile test"
         } 
     }
