@@ -1,12 +1,11 @@
 node {
+    agent { docker { image: 'maven:3.3.3' } }
     stage('SCM') {
         checkout scm
     }
 
    stage ('Build')  {
         git 'https://github.com/JasyCharles/finalproject.git'
-
-       agent { docker { image: 'maven:3.3.3' } }
        sh 'mvn clean install'
        sh 'mvn clean compile test'
     }
