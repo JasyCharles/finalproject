@@ -7,7 +7,7 @@ node {
         git 'https://github.com/JasyCharles/finalproject.git'
 
         def mvnHome = tool 'mvn'
-        withMaven(()  {
+        withMaven()  {
                 sh "${mvnHome}/bin/mvn clean compile test"
         } 
     }
