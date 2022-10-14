@@ -7,10 +7,8 @@ node {
         git 'https://github.com/JasyCharles/finalproject.git'
 
        agent { docker { image: 'maven:3.3.3' } }
-        steps  {
-                sh 'mvn clean install'
-                sh 'mvn clean compile test'
-        } 
+       sh 'mvn clean install'
+       sh 'mvn clean compile test'
     }
     
     
