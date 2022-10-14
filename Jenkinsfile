@@ -5,10 +5,9 @@ node {
 
       stage ('Build')  {
           git 'https://github.com/JasyCharles/finalproject.git'
-          def mvnHome = tool 'mvn'
              withMaven() {
-                sh "{mvnHome}bin/mvn clean install"
-                sh "{mvnHome}/bin/mvn clean compile test"
+                sh 'mvn clean install'
+                sh 'mvn clean compile test'
              }
        }
     
